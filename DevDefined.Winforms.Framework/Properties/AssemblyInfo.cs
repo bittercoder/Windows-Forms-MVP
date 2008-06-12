@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly : AssemblyTitle("DevDefined.Winforms.Framework")]
-[assembly: AssemblyDescription("A Winforms MVP Framework")]
+[assembly : AssemblyDescription("A Winforms MVP Framework")]
 [assembly : AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DevDefined Limited")]
+[assembly : AssemblyCompany("DevDefined Limited")]
 [assembly : AssemblyProduct("DevDefined.Winforms.Framework")]
 [assembly : AssemblyCopyright("Copyright © DevDefined Limited 2008")]
 [assembly : AssemblyTrademark("")]

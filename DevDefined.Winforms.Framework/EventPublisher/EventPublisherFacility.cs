@@ -1,12 +1,11 @@
 ﻿using Castle.Core;
 using Castle.MicroKernel.Facilities;
-using DevDefined.Winforms.Framework.EventPublisher;
 
 namespace DevDefined.Winforms.Framework.EventPublisher
 {
     public class EventPublisherFacility : AbstractFacility
     {
-        private readonly IEventPublisher _eventPublisher = new DevDefined.Winforms.Framework.EventPublisher.EventPublisher();
+        private readonly IEventPublisher _eventPublisher = new EventPublisher();
 
         protected override void Init()
         {

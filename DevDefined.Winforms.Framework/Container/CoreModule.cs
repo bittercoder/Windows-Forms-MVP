@@ -27,18 +27,21 @@ namespace DevDefined.Winforms.Framework.Container
             container.AddFacility<StartableFacility>();
             container.AddFacility<DockingFacility>();
             container.AddFacility<MenuFacility>();
+
             container.AddComponent("applicationShell", typeof (IApplicationShell), typeof (ApplicationShell));
+            
             container.AddComponent("presenter.factory", typeof (IPresenterFactory), typeof (PresenterFactory));
 
             container.Register(
                 Component.For<IImageSource>().ImplementedBy<ResourceManagerImageSource>().Named("imageSource.res"));
-
+            
             container.Register(
                 Component.For<IImageFactory>()
                     .ImplementedBy<ImageFactory>()
                     .ServiceOverrides(
                     ServiceOverride.ForKey("sources").Eq<IImageSource>("imageSource.res")));
 
+            // todo: refactor to register all views and presenters declaratively.
             container.Register(
                 Component.For<IOutputView>().ImplementedBy<OutputView>(),
                 Component.For<IOutputPresenter>().ImplementedBy<OutputPresenter>(),
@@ -60,7 +63,7 @@ namespace DevDefined.Winforms.Framework.Container
 
             container.Register(AllTypes.Of<AbstractCommand>().FromAssembly(typeof (AbstractCommand).Assembly));
 
-            container.Register(                
+            container.Register(
                 Component.For<DockedWindowsMenuModel>());
         }
 

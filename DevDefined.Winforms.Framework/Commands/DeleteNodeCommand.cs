@@ -5,8 +5,8 @@ using DevDefined.Winforms.Framework.Menus;
 
 namespace DevDefined.Winforms.Framework.Commands
 {
-    [ContextMenu(TargetType = typeof(IProjectExplorerPresenter), Image = CoreImages.DeleteHS)]
-    [ContextMenu(TargetType = typeof(TreeNode))]    
+    [ContextMenu(TargetType = typeof (IProjectExplorerPresenter), Image = CoreImages.DeleteHS)]
+    [ContextMenu(TargetType = typeof (TreeNode))]
     public class DeleteNodeCommand : AbstractCommand
     {
         public override string Text
