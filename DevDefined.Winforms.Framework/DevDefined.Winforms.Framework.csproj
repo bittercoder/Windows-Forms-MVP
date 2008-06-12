@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30428</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA40F786-46D7-4079-BA9E-A0199E7CD1F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DevDefined.Winforms.Framework</RootNamespace>
+    <AssemblyName>DevDefined.Winforms.Framework</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\shared-libs\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\shared-libs\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\shared-libs\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\shared-libs\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.2.2864.18696, Culture=neutral, PublicKeyToken=d481317c817cec47, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\shared-libs\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIns\IInstalledAddInsPresenter.cs" />
+    <Compile Include="AddIns\IInstalledAddInsView.cs" />
+    <Compile Include="AddIns\InstalledAddInsPresenter.cs" />
+    <Compile Include="AddIns\InstalledAddInsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIns\InstalledAddInsView.Designer.cs">
+      <DependentUpon>InstalledAddInsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIns\LoadedAddIn.cs" />
+    <Compile Include="AddIns\AddInAttribute.cs" />
+    <Compile Include="AddIns\AddInController.cs" />
+    <Compile Include="AddIns\AddInLoader.cs" />
+    <Compile Include="AddIns\IAddinInstaller.cs" />
+    <Compile Include="AddIns\IAddInController.cs" />
+    <Compile Include="AddIns\IAddInLoader.cs" />
+    <Compile Include="Commands\AbstractCommand.cs" />
+    <Compile Include="Commands\DeleteNodeCommand.cs" />
+    <Compile Include="Commands\ExitApplicationCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandExecutor.cs" />
+    <Compile Include="Docking\AbstractDockStrategyAttribute.cs" />
+    <Compile Include="Docking\DockingLayoutRegistry.cs" />
+    <Compile Include="Docking\DockInPositionAttribute.cs" />
+    <Compile Include="Docking\DockInsidePanelAttribute.cs" />
+    <Compile Include="Docking\IDockingController.cs" />
+    <Compile Include="Docking\IDockingLayoutRegistry.cs" />
+    <Compile Include="Images\IImageFactory.cs" />
+    <Compile Include="Images\ResourceManagerImageSource.cs" />
+    <Compile Include="Images\CoreImages.cs" />
+    <Compile Include="Images\IImageSource.cs" />
+    <Compile Include="Images\ImageFactory.cs" />
+    <Compile Include="Menus\AbstractMenuAttribute.cs" />
+    <Compile Include="Menus\CollectionMenuModel.cs" />
+    <Compile Include="Menus\CommandMenuModel.cs" />
+    <Compile Include="Menus\ContextMenuAttribute.cs" />
+    <Compile Include="Menus\CustomMenuModelBase.cs" />
+    <Compile Include="Menus\DockedWindowsMenuModel.cs" />
+    <Compile Include="Menus\FolderMenuModel.cs" />
+    <Compile Include="Menus\IMenuController.cs" />
+    <Compile Include="Menus\IMenuPresenter.cs" />
+    <Compile Include="Menus\IMenuRegistry.cs" />
+    <Compile Include="Menus\IMenuModel.cs" />
+    <Compile Include="Menus\MainMenuAttribute.cs" />
+    <Compile Include="Menus\MenuController.cs" />
+    <Compile Include="Menus\MenuStripPresenter.cs" />
+    <Compile Include="Menus\MenuFacility.cs" />
+    <Compile Include="Menus\MenuModelBase.cs" />
+    <Compile Include="Menus\MenuRegistry.cs" />
+    <Compile Include="Menus\MenuStripPresenterBase.cs" />
+    <Compile Include="Menus\RootMenuModel.cs" />
+    <Compile Include="Menus\ToolStripMenuPresenter.cs" />
+    <Compile Include="Presenter\PresenterVisibiltyChangedSubject.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\ApplicationShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\ApplicationShell.Designer.cs">
+      <DependentUpon>ApplicationShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\ApplicationStartedSubject.cs" />
+    <Compile Include="Container\CoreModule.cs" />
+    <Compile Include="Container\IModule.cs" />
+    <Compile Include="Container\WinformsContainer.cs" />
+    <Compile Include="Content\Output\IOutputPresenter.cs" />
+    <Compile Include="Content\Output\IOutputView.cs" />
+    <Compile Include="Content\Output\OutputPresenter.cs" />
+    <Compile Include="Content\Output\OutputView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\Output\OutputView.Designer.cs">
+      <DependentUpon>OutputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ProjectExplorer\IProjectExplorerPresenter.cs" />
+    <Compile Include="Content\ProjectExplorer\IProjectExplorerView.cs" />
+    <Compile Include="Content\ProjectExplorer\ProjectExplorerPresenter.cs" />
+    <Compile Include="Content\ProjectExplorer\ProjectExplorerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\ProjectExplorer\ProjectExplorerView.Designer.cs">
+      <DependentUpon>ProjectExplorerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\PropertyGrid\IPropertyGridPresenter.cs" />
+    <Compile Include="Content\PropertyGrid\IPropertyGridView.cs" />
+    <Compile Include="Content\PropertyGrid\PropertyGridPresenter.cs" />
+    <Compile Include="Content\PropertyGrid\PropertyGridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\PropertyGrid\PropertyGridView.Designer.cs">
+      <DependentUpon>PropertyGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ToolBox\IToolBoxPresenter.cs" />
+    <Compile Include="Content\ToolBox\IToolBoxView.cs" />
+    <Compile Include="Content\ToolBox\ToolBoxPresenter.cs" />
+    <Compile Include="Content\ToolBox\ToolBoxView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\ToolBox\ToolBoxView.Designer.cs">
+      <DependentUpon>ToolBoxView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenter\AbstractPresenter.cs" />
+    <Compile Include="Docking\DockingController.cs" />
+    <Compile Include="Docking\DockingFacility.cs" />
+    <Compile Include="Presenter\IPresenter.cs" />
+    <Compile Include="Presenter\IPresenterFactory.cs" />
+    <Compile Include="Presenter\IView.cs" />
+    <Compile Include="Presenter\PresenterFactory.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="EventPublisher\EventPublisher.cs" />
+    <Compile Include="EventPublisher\EventPublisherFacility.cs" />
+    <Compile Include="EventPublisher\IEventPublisher.cs" />
+    <Compile Include="EventPublisher\IListener.cs" />
+    <Compile Include="Shell\IApplicationShell.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflector.cs" />
+    <Compile Include="Text.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\Output\OutputView.resx">
+      <DependentUpon>OutputView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\ProjectExplorer\ProjectExplorerView.resx">
+      <DependentUpon>ProjectExplorerView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\PropertyGrid\PropertyGridView.resx">
+      <DependentUpon>PropertyGridView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\ToolBox\ToolBoxView.resx">
+      <DependentUpon>ToolBoxView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\ApplicationShell.resx">
+      <DependentUpon>ApplicationShell.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\System.Core\System.Core.csproj">
+      <Project>{88860A17-9FD9-440A-9565-8487793F69D2}</Project>
+      <Name>System.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ZoomHS.png" />
+    <None Include="Resources\XMLFileHS.png" />
+    <None Include="Resources\WindowsHS.png" />
+    <None Include="Resources\WebInsertHyperlinkHS.png" />
+    <None Include="Resources\Web.png" />
+    <None Include="Resources\WarningHS.png" />
+    <None Include="Resources\ViewThumbnailsHS.png" />
+    <None Include="Resources\TileWindowsHorizontallyHS.png" />
+    <None Include="Resources\ThumbnailViewHS.png" />
+    <None Include="Resources\ThumbnailView.png" />
+    <None Include="Resources\ThumbnailLoadingHS.png" />
+    <None Include="Resources\TextboxHS.png" />
+    <None Include="Resources\TaskHS.png" />
+    <None Include="Resources\TableHS.png" />
+    <None Include="Resources\SymbolHS.png" />
+    <None Include="Resources\SychronizeListHS.png" />
+    <None Include="Resources\StopHS.png" />
+    <None Include="Resources\SplitSubdocumentHS.png" />
+    <None Include="Resources\SpeechMicHS.png" />
+    <None Include="Resources\SortUpHS.png" />
+    <None Include="Resources\SortHS.png" />
+    <None Include="Resources\size_icon.gif" />
+    <None Include="Resources\ShowRulerHS.png" />
+    <None Include="Resources\ShowRulelinesHS.png" />
+    <None Include="Resources\ShowGridlinesHS.png" />
+    <None Include="Resources\ShowGridlines2HS.png" />
+    <None Include="Resources\ShowAllCommentsHS.png" />
+    <None Include="Resources\SendToBackHS.png" />
+    <None Include="Resources\SendBackwardHS.png" />
+    <None Include="Resources\SearchWebHS.png" />
+    <None Include="Resources\SearchFolderHS.png" />
+    <None Include="Resources\ScreenTreeView.bmp" />
+    <None Include="Resources\ScreenArchitect.ico" />
+    <None Include="Resources\saveHS.png" />
+    <None Include="Resources\SaveFormDesignHS.png" />
+    <None Include="Resources\SaveAsWebPageHS.png" />
+    <None Include="Resources\SaveAllHS.png" />
+    <None Include="Resources\RulerHS.png" />
+    <None Include="Resources\RoutingSlipHS.png" />
+    <None Include="Resources\RightToLeftDoucmentHS.png" />
+    <None Include="Resources\RightsRestrictedHS.png" />
+    <None Include="Resources\RightArrowHS.png" />
+    <None Include="Resources\RightArrow2HS.png" />
+    <None Include="Resources\RighsRestrictedHS.png" />
+    <None Include="Resources\RestartHS.png" />
+    <None Include="Resources\ResizeHS.png" />
+    <None Include="Resources\RepeatHS.png" />
+    <None Include="Resources\RenameFolderHS.png" />
+    <None Include="Resources\RelationshipsHS.png" />
+    <None Include="Resources\RefreshDocViewHS.png" />
+    <None Include="Resources\RecordHS.png" />
+    <None Include="Resources\RecolorPictureHS.png" />
+    <None Include="Resources\RadialChartHS.png" />
+    <None Include="Resources\PushpinHS.png" />
+    <None Include="Resources\PublishToWebHS.png" />
+    <None Include="Resources\PublishPlanHS.png" />
+    <None Include="Resources\ProtectSubdocumentHS.png" />
+    <None Include="Resources\ProtectFormHS.png" />
+    <None Include="Resources\PropertiesHS.png" />
+    <None Include="Resources\PrintSetupHS.png" />
+    <None Include="Resources\PrintPreviewHS.png" />
+    <None Include="Resources\PrintHS.png" />
+    <None Include="Resources\PrimaryKeyHS.png" />
+    <None Include="Resources\PreviousPageHS.png" />
+    <None Include="Resources\PreviewScreen.png" />
+    <None Include="Resources\PortraitLandscapeHS.png" />
+    <None Include="Resources\PortraitHS.png" />
+    <None Include="Resources\PointerHS.png" />
+    <None Include="Resources\Pointer.png" />
+    <None Include="Resources\Pointer.bmp" />
+    <None Include="Resources\PlayHS.png" />
+    <None Include="Resources\PieChartHS.png" />
+    <None Include="Resources\PieChart3DHS.png" />
+    <None Include="Resources\PauseRecorderHS.png" />
+    <None Include="Resources\PauseHS.png" />
+    <None Include="Resources\PasteHS.png" />
+    <None Include="Resources\PageWidthHS.png" />
+    <None Include="Resources\PageUpHS.png" />
+    <None Include="Resources\pageNumberHS.png" />
+    <None Include="Resources\PackageTreeViewIcon.bmp" />
+    <None Include="Resources\OutdentHS.png" />
+    <None Include="Resources\OrgChartHS.png" />
+    <None Include="Resources\OrganizerHS.png" />
+    <None Include="Resources\OptionsHS.png" />
+    <None Include="Resources\OpenSelectedItemHS.png" />
+    <None Include="Resources\openHS.png" />
+    <None Include="Resources\openfolderHS.png" />
+    <None Include="Resources\NoteHS.png" />
+    <None Include="Resources\NextPageHS.png" />
+    <None Include="Resources\NewReportHS.png" />
+    <None Include="Resources\NewMessageHS.png" />
+    <None Include="Resources\NewFolderHS.png" />
+    <None Include="Resources\NewFolderHS.bmp" />
+    <None Include="Resources\NewDocumentHS.png" />
+    <None Include="Resources\NewDocumentHS.BMP" />
+    <None Include="Resources\NewCardHS.png" />
+    <None Include="Resources\NavForward.png" />
+    <None Include="Resources\NavBack.png" />
+    <None Include="Resources\MultiplePagesHS.png" />
+    <None Include="Resources\MoveToFolderHS.png" />
+    <None Include="Resources\MoveFolderHS.png" />
+    <None Include="Resources\MonthlyViewHS.png" />
+    <None Include="Resources\ModelTreeViewIcon.bmp" />
+    <None Include="Resources\MakeSameWidth.png" />
+    <None Include="Resources\MakeSameSize.png" />
+    <None Include="Resources\MakeSameHeight.png" />
+    <None Include="Resources\location_icon.gif" />
+    <None Include="Resources\List_NumberedVertTHS.png" />
+    <None Include="Resources\List_NumberedTBHS.png" />
+    <None Include="Resources\List_NumberedRTLHS.png" />
+    <None Include="Resources\List_NumberedHS.png" />
+    <None Include="Resources\List_BulletsHS.png" />
+    <None Include="Resources\LineColorHS.png" />
+    <None Include="Resources\LightBrownPackageTreeViewIcon.bmp" />
+    <None Include="Resources\LegendHS.png" />
+    <None Include="Resources\ItalicHS.png" />
+    <None Include="Resources\InsertTabControlHS.png" />
+    <None Include="Resources\InsertPictureHS.png" />
+    <None Include="Resources\InsertHyperlinkHS.png" />
+    <None Include="Resources\IndentHS.png" />
+    <None Include="Resources\ImportXMLHS.png" />
+    <None Include="Resources\HTMLSubmitHS.png" />
+    <None Include="Resources\HTMLPasswordHS.png" />
+    <None Include="Resources\HTMLPageHS.png" />
+    <None Include="Resources\HtmlBalanceBracesHS.png" />
+    <None Include="Resources\HomeHS.png" />
+    <None Include="Resources\HighlightHS.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\GreenPackageTreeViewIcon.bmp" />
+    <None Include="Resources\graphhs.png" />
+    <None Include="Resources\GotoShortcutsHS.png" />
+    <None Include="Resources\GoToPreviousMessage.png" />
+    <None Include="Resources\GoToPrevious.png" />
+    <None Include="Resources\GoToParentFolderHS.png" />
+    <None Include="Resources\GoToNextHS.png" />
+    <None Include="Resources\GoRtlHS.png" />
+    <None Include="Resources\GoLtrHS.png" />
+    <None Include="Resources\GenerateRtfDocumentation.png" />
+    <None Include="Resources\GenerateHtmlDocumentation.png" />
+    <None Include="Resources\FunctionHS.png" />
+    <None Include="Resources\FullScreenHS.png" />
+    <None Include="Resources\FullScreen.png" />
+    <None Include="Resources\FormulaEvaluatorHS.png" />
+    <None Include="Resources\FormRunHS.png" />
+    <None Include="Resources\FontSchemeHS.png" />
+    <None Include="Resources\FontHS.png" />
+    <None Include="Resources\FontDialogHS.png" />
+    <None Include="Resources\FlipVerticalHS.png" />
+    <None Include="Resources\FlipHorizontalHS.png" />
+    <None Include="Resources\Flag_redHS.png" />
+    <None Include="Resources\Flag_greenHS.png" />
+    <None Include="Resources\Flag_blueHS.png" />
+    <None Include="Resources\FindNextHS.png" />
+    <None Include="Resources\FindHS.png" />
+    <None Include="Resources\Filter2HS.png" />
+    <None Include="Resources\FillUpHS.png" />
+    <None Include="Resources\FillRightHS.png" />
+    <None Include="Resources\FillLeftHS.png" />
+    <None Include="Resources\FillDownHS.png" />
+    <None Include="Resources\FaxHS.png" />
+    <None Include="Resources\ExpirationHS.png" />
+    <None Include="Resources\ExpandSpaceHS.png" />
+    <None Include="Resources\eps_openHS.png" />
+    <None Include="Resources\eps_open_largelHS.png" />
+    <None Include="Resources\eps_closedHS.png" />
+    <None Include="Resources\EnvelopeHS.png" />
+    <None Include="Resources\EditTableHS.png" />
+    <None Include="Resources\EditInformationHS.png" />
+    <None Include="Resources\EditCodeHS.png" />
+    <None Include="Resources\EditBrightContrastHS.png" />
+    <None Include="Resources\Edit_UndoHS.png" />
+    <None Include="Resources\Edit_RedoHS.png" />
+    <None Include="Resources\ea2.png" />
+    <None Include="Resources\DoubleRightArrowHS.png" />
+    <None Include="Resources\DoubleLeftArrowHS.png" />
+    <None Include="Resources\DocumentHS.png" />
+    <None Include="Resources\DisplayInColorHS.png" />
+    <None Include="Resources\DialHS.png" />
+    <None Include="Resources\DeleteHS.png" />
+    <None Include="Resources\DeleteFolderHS.png" />
+    <None Include="Resources\Delete.bmp" />
+    <None Include="Resources\DataContainer_NewRecordHS.png" />
+    <None Include="Resources\DataContainer_MovePreviousHS.png" />
+    <None Include="Resources\DataContainer_MoveNextHS.png" />
+    <None Include="Resources\DataContainer_MoveLastHS.png" />
+    <None Include="Resources\DataContainer_MoveFirstHS.png" />
+    <None Include="Resources\DataContainer_MoveFirsHS.png" />
+    <None Include="Resources\CutHS.png" />
+    <None Include="Resources\CopyHS.png" />
+    <None Include="Resources\CopyFolderHS.png" />
+    <None Include="Resources\ConflictHS.png" />
+    <None Include="Resources\compareversionsHS.png" />
+    <None Include="Resources\CommentHS.png" />
+    <None Include="Resources\ColorHS.png" />
+    <None Include="Resources\Color_fontHS.png" />
+    <None Include="Resources\Color_font.png" />
+    <None Include="Resources\CheckSpellingHS.png" />
+    <None Include="Resources\CheckGrammarHS.png" />
+    <None Include="Resources\CheckBoxHS.png" />
+    <None Include="Resources\CenterAcrossHS.png" />
+    <None Include="Resources\CascadeWindowsHS.png" />
+    <None Include="Resources\CanvasScaleHS.png" />
+    <None Include="Resources\Calendar_scheduleHS.png" />
+    <None Include="Resources\CalculatorHS.png" />
+    <None Include="Resources\BringToFrontHS.png" />
+    <None Include="Resources\BringForwardHS.png" />
+    <None Include="Resources\BreakpointHS.png" />
+    <None Include="Resources\Book_StackOfReportsHS.png" />
+    <None Include="Resources\book_reportHS.png" />
+    <None Include="Resources\Book_openHS.png" />
+    <None Include="Resources\Book_angleHS.png" />
+    <None Include="Resources\book_addressHS.png" />
+    <None Include="Resources\boldhs.png" />
+    <None Include="Resources\BehindTextHS.png" />
+    <None Include="Resources\BarCodeHS.png" />
+    <None Include="Resources\BackgroundSoundHS.png" />
+    <None Include="Resources\AudioHS.png" />
+    <None Include="Resources\AttachmentHS.png" />
+    <None Include="Resources\ArrangeWindowsHS.png" />
+    <None Include="Resources\ArrangeSideBySideHS.png" />
+    <None Include="Resources\AlignToGridHS.png" />
+    <None Include="Resources\AlignTableCellMiddleRightHS.png" />
+    <None Include="Resources\AlignTableCellMiddleLeftJustHS.png" />
+    <None Include="Resources\AlignTableCellMiddleCenterHS.png" />
+    <None Include="Resources\AlignObjectsTopHS.png" />
+    <None Include="Resources\AlignObjectsRightHS.png" />
+    <None Include="Resources\AlignObjectsLeftHS.png" />
+    <None Include="Resources\AlignObjectsCenteredVerticalHS.png" />
+    <None Include="Resources\AlignObjectsCenteredHorizontalHS.png" />
+    <None Include="Resources\AlignObjectsBottomHS.png" />
+    <None Include="Resources\AddToFavoritesHS.png" />
+    <None Include="Resources\AddTableHS.png" />
+    <None Include="Resources\ActualSizeHS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

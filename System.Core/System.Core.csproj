@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30428</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{88860A17-9FD9-440A-9565-8487793F69D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Core</RootNamespace>
+    <AssemblyName>System.Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Linq\ExtensionAttribute.cs" />
+    <Compile Include="Linq\Func and Action delegates.cs" />
+    <Compile Include="Linq\GroupedEnumerable.cs" />
+    <Compile Include="Linq\Grouping.cs" />
+    <Compile Include="Linq\IGrouping.cs" />
+    <Compile Include="Linq\ILookup.cs" />
+    <Compile Include="Linq\IOrderedEnumerable.cs" />
+    <Compile Include="Linq\Lookup.cs" />
+    <Compile Include="Linq\OrderByEnumerable.cs" />
+    <Compile Include="Linq\Query Operators\Aggregation Operators - Average.cs" />
+    <Compile Include="Linq\Query Operators\Aggregation Operators - Sum.cs" />
+    <Compile Include="Linq\Query Operators\Aggregation Operators.cs" />
+    <Compile Include="Linq\Query Operators\Conversion Operators.cs" />
+    <Compile Include="Linq\Query Operators\Element Operators.cs" />
+    <Compile Include="Linq\Query Operators\Enumerable Private.cs" />
+    <Compile Include="Linq\Query Operators\Filtering Operators.cs" />
+    <Compile Include="Linq\Query Operators\Generation Operators.cs" />
+    <Compile Include="Linq\Query Operators\Grouping Operators.cs" />
+    <Compile Include="Linq\Query Operators\Joining Operators.cs" />
+    <Compile Include="Linq\Query Operators\Misc Operators.cs" />
+    <Compile Include="Linq\Query Operators\Ordering Operators.cs" />
+    <Compile Include="Linq\Query Operators\Projection Operators.cs" />
+    <Compile Include="Linq\Query Operators\Quantifiers.cs" />
+    <Compile Include="Linq\Query Operators\Set Operators.cs" />
+    <Compile Include="Linq\ThenByEnumerable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
